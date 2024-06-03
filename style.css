@@ -1,0 +1,29 @@
+p{
+    color: red;
+    text-align: left;
+}
+.seatplan input{
+    margin-left: 12px;
+    padding: 5px;
+}
+.seatplan > input{
+    height: 1em;
+    width: 1em;
+    cursor: pointer;
+  }
+  
+  .seatplan > input:disabled{
+    cursor: not-allowed;
+  }
+  .radios {
+   display: flex;
+   justify-content: space-between;
+  }
+  table,tbody,thead,th,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  th,td{
+    padding: 20px;
+  }
+  
