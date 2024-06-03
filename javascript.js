@@ -34,10 +34,10 @@ function ReadAll(){
         var uname=document.querySelector(".uname").value;
         var password=document.querySelector(".password").value;
         var date_picker=document.querySelector(".date_picker").value;
-        var checks=document.querySelector(".checks").value;
+        var checks=document.querySelector('input[name="A1"]:checked').value;
         var phone=document.querySelector(".phone").value;
         var email=document.querySelector(".email").value;
-        var radios=document.querySelector(".radios").value;
+        var radios=document.querySelector('input[name="fav_language"]:checked').value;
         var country=document.querySelector(".country").value;
         var state=document.querySelector(".state").value;
         var Taluk=document.querySelector(".Taluk").value;

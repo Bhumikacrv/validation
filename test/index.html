@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="rates">
+        <input type="radio" id="r1" name="rate" value="Fixed Rate"> Fixed Rate
+        <input type="radio" id="r2" name="rate" value="Variable Rate"> Variable Rate
+        <input type="radio" id="r3" name="rate" value="Multi Rate" checked="checked"> Multi Rate
+      </div>
+      <p id="results"></p>
+    
+    <script>
+        
+
+document.getElementById('results').innerHTML = document.querySelector('input[name="rate"]:checked').value;;
+    </script>
+</body>
+</html>
