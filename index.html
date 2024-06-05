@@ -22,7 +22,7 @@
                 <div class="form-group row m-4">
                   <label for="" class="col-sm-2 col-form-label">Name</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control characters name" id="name"/>
+                    <input type="text" class="form-control characters name" id="name" onclick="chat()"/>
                     <p id="Name"></p>
                   </div>
                 </div>
@@ -30,7 +30,7 @@
                 <div class="form-group row m-4">
                   <label for="" class="col-sm-2 col-form-label">User Name</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control characters uname" id="uname"/>
+                    <input type="text" class="form-control characters uname" id="uname" onclick="special()"/>
                     <p id="UName"></p>
                   </div>
                 </div>
@@ -38,7 +38,7 @@
                 <div class="form-group row m-4">
                   <label for="" class="col-sm-2 col-form-label">PassWord</label>
                   <div class="col-sm-10">
-                    <input type="password" class="form-control characters password" id="password"/>
+                    <input type="password" class="form-control characters password" id="password" onclick="pass()"/>
                     <p id="pw"></p>
                   </div>
                 </div>
@@ -73,7 +73,7 @@
                 <div class="form-group row m-4">
                   <label for="" class="col-sm-2 col-form-label">Mobile No</label>
                   <div class="col-sm-10">
-                    <input id="phone" class="form-control characters phone" type="number" autocomplete="off"/>
+                    <input id="phone" class="form-control characters phone" type="number" autocomplete="off" onclick="num()"/>
                     <p id="ph"></p>
                   </div>
                 </div>
@@ -81,7 +81,7 @@
                 <div class="form-group row m-4">
                   <label for="" class="col-sm-2 col-form-label">Email</label>
                   <div class="col-sm-10">
-                    <input id="email" class="form-control characters email" type="email" autocomplete="off"/>
+                    <input id="email" class="form-control characters email" type="email" autocomplete="off" onclick=" mail()"/>
                     <p id="em"></p>
                   </div>
                 </div>
@@ -171,8 +171,8 @@
                 <div class="form-group row m-4">
                   <label for="" class="col-sm-2 col-form-label">Pin Code</label>
                   <div class="col-sm-10">
-                    <input id="pin" class="form-control characters pin" type="text" autocomplete="off"/>
-                    <p id="em"></p>
+                    <input id="pin" class="form-control characters pin" type="number" onclick="pincode()" autocomplete="off"/>
+                    <p id="pins"></p>
                   </div>
                 </div>
 

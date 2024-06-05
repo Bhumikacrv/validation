@@ -24,12 +24,8 @@ function ReadAll(){
      
      
      function send() {
-        chat();
-        special();
-        pass();
-        num();
-        mail();
-
+        
+      pincode();
         var name=document.querySelector(".name").value;
         var uname=document.querySelector(".uname").value;
         var password=document.querySelector(".password").value;
@@ -59,6 +55,7 @@ function ReadAll(){
         if (name.match(letters) && name.length > 5) {
           //document.getElementById('Name').innerHTML='Your name have accepted : you can try another';
           //console.log(document.getElementById('name').value);
+          document.getElementById("Name").innerHTML ="";
           return true;
         } else {
           document.getElementById("Name").innerHTML =
@@ -67,11 +64,13 @@ function ReadAll(){
         }
       }
       function special() {
+        chat();
         var nospecial = /^[a-z]+$/;
         let uname = document.getElementById("uname").value;
         if (uname.match(nospecial)) {
           //alert('Your name have accepted : you can try another');
           //console.log(document.getElementById('uname').value);
+          document.getElementById("UName").innerHTML ="";
           return true;
         } else {
           document.getElementById("UName").innerHTML =
@@ -81,12 +80,14 @@ function ReadAll(){
       }
 
       function pass() {
+        special();
         const password = document.getElementById("password").value;
         if (!/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}/.test(password)) {
           document.getElementById("pw").innerHTML =
             "Password must be strong: at least 8 characters, including one uppercase, one lowercase, one number, and one special character.";
           return false;
         } else {
+          document.getElementById("pw").innerHTML ="";
           return true;
         }
       }
@@ -98,6 +99,7 @@ function ReadAll(){
 
       // Borrowed from https://stackoverflow.com/a/29774197/7290573
       function getDate(days) {
+        
         let date = new Date(Date.now() + days * 24 * 60 * 60 * 1000);
         const offset = date.getTimezoneOffset();
         date = new Date(date.getTime() - offset * 60 * 1000);
@@ -105,6 +107,7 @@ function ReadAll(){
       }
 
       datePicker.addEventListener("change", function () {
+        pass();
         const selectedDate = new Date(datePicker.value);
         const minDate = new Date(datePicker.min);
         const maxDate = new Date(datePicker.max);
@@ -112,7 +115,7 @@ function ReadAll(){
         if (selectedDate < minDate || selectedDate > maxDate) {
           errorMsg.style.display = "block";
           document.getElementById("error-msg").innerHTML =
-            "Please select a valid date (not in the future and within the past 120 years).";
+            "Please select a valid date.";
         } else {
           errorMsg.style.display = "none";
         }
@@ -135,9 +138,10 @@ function ReadAll(){
         var numbers = /^[0-9]+$/;
         let phoneno = document.getElementById("phone").value;
 
-        if (phoneno.match(numbers) && phoneno.length <= 10) {
+        if (phoneno.match(numbers) && phoneno.length == 10) {
           //document.getElementById('Name').innerHTML='Your name have accepted : you can try another';
           //console.log(document.getElementById('name').value);
+          document.getElementById("ph").innerHTML ="";
           return true;
         } else {
           document.getElementById("ph").innerHTML =
@@ -147,16 +151,36 @@ function ReadAll(){
       }
 
       function mail() {
+        num();
         var mail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|in)$/;
         let email = document.getElementById("email").value;
 
         if (email.match(mail)) {
           //document.getElementById('Name').innerHTML='Your name have accepted : you can try another';
           //console.log(document.getElementById('name').value);
+          document.getElementById("em").innerHTML ="";
           return true;
         } else {
           document.getElementById("em").innerHTML =
             "Mail should be end with .in/.com";
+          return false;
+        }
+      }
+
+      function pincode(){
+        mail();
+        var numbering = /^[0-9]+$/;
+        let phonenos = document.getElementById("pin").value;
+
+        if (phonenos.match(numbering) && phonenos.length == 6) {
+          //document.getElementById('Name').innerHTML='Your name have accepted : you can try another';
+          //console.log(document.getElementById('name').value);
+          document.getElementById("pins").innerHTML ="";
+          return true;
+        } else {
+          document.getElementById("pins").innerHTML =
+            "Pin number Should be 6 numbers";
+            
           return false;
         }
       }
